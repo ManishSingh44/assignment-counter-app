@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter </title>
+    <!-- style sheet of counter assignment -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content:center ;
+        }
+        /* container desigh of our counter assignment  */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 0 6px rgb(10, 7, 7);
+            padding: 22px;
+            border-radius: 6px;
+            background-color: rgb(237, 215, 138);
+            border-radius: 10%;
+        }
+        /* designing the button  */
+        button {
+            padding: 6px 17px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: rgb(252, 137, 137);
+
+        }
+        /* our display value  */
+        #displayValue {
+            font-size: 25px;
+            padding: 5px 15px;
+            border: 1px solid rgb(205, 27, 27);
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- body of our conter assignment  -->
+    <div class="container">
+        <h1>Counter app </h1>
+   
+    <div>
+        <button id="decrementBtn">Decrement by 1</button>
+        <span id ="displayValue">0</span>
+        <button id="incrementBtn">increment by 1 </button>
+
+    </div>
+    <!-- button to rest the value  -->
+    <button id="resetBtn">Reset Value</button>
+</div>
+</body>
+<!-- our assignment javascript  -->
+<script>
+const decrementBtn = document.getElementById("decrementBtn");
+const incrementBtn = document.getElementById("incrementBtn");
+const resetBtn = document.getElementById("resetBtn");
+const displayValue = document.getElementById("displayValue");
+// for decrement button click 
+decrementBtn.addEventListener("click", () =>{
+    const value = Number(displayValue.innerText);
+    if (value >0){
+        displayValue.innerText = value-1;
+    }
+    else{
+        alert("Negative value not allowed");
+    }
+});
+// for increment button click 
+incrementBtn.addEventListener("click", () =>{
+    const value = Number(displayValue.innerText);
+    if(value >=20){
+        alert("20+ values are not allowed");
+    }
+    else{
+        displayValue.innerText = value +1;
+    }
+});
+// for reset button click 
+resetBtn.addEventListener("click",()=>{
+    displayValue.innerText =10;
+});
+
+</script>
+</html>
